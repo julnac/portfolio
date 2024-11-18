@@ -7,7 +7,7 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: { },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -17,13 +17,13 @@ export default {
       'accent1': '#CA165D',
       'accent2': '#87CEFA',
     },
-    fontSize: {
-      h1: '132px',
-      h2: '68px',
-      h3: '48px',
-      h4: '28px',
-      p: '16px',
-    },
+    // fontSize: {
+    //   h1: '132px',
+    //   h2: '68px',
+    //   h3: '48px',
+    //   h4: '28px',
+    //   p: '16px',
+    // },
   },
   plugins: [],
 } satisfies Config;
