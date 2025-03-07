@@ -1,26 +1,37 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Chivo } from 'next/font/google';
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import { Chivo, Geist_Mono } from 'next/font/google';
+import { Navigation } from "@/app/components/Navigation";
+import { Footer } from "@/app/components/Footer";
 
 const chivo = Chivo({
-  weight: '400',
+  variable: "--font-chivo",
   subsets: ['latin'],
-  display: 'swap',
+  weight: ["300", "400", "500", "600", "700"],
 })
 
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Portfolio julii",
+  title: "Julia Pozorska",
   description: "All best works in one place",
+  icons: {
+    icon: "/icons/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode}) {
   return (
-    <html lang="en" className={chivo.className}>
-      <body className="font-normal text-base p-0 m-0 text-dark bg-light">
+    <html lang="en">
+      <body className={`${chivo.variable} ${geistMono.variable} font-sans`}>
         <Navigation />
-        <main>{children}</main>
+        <main className="grid grid-cols-1 pt-14 mx-6 min-h-dvh font-chivo">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

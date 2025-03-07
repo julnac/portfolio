@@ -2,15 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html,
-body {
-  color: var(--dark);
-  background: var(--light);
-} */
+:root {
+  --background: #ffffff;
+  --foreground: #030712;
+  --primary: #CA165D;
+  --secondary: #87CEFA;
+  --muted: #89909b;
+  --background-muted: #F2F2F3;
+  --background-modal: rgba(255, 255, 255, 0.8);
+  --font-chivo: "Chivo", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+  --container: 18rem;
+  /*--spacing: .25rem;*/
+}
 
-/* .chivo {
-  font-family: "Chivo", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-} */
+.dark {
+  --background: #030712;
+  --foreground: #FBFBFB;
+  --primary: #CA165D;
+  --secondary: #87CEFA;
+  --muted: #CCD0D7;
+  --background-muted: #1D202A;
+  --background-modal: rgba(3, 7, 18, 0.8);
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+h1 {
+  @apply mt-2 mb-8 text-3xl font-medium tracking-tight text-foreground;
+}
+
+h2 {
+  @apply text-lg font-semibold text-foreground mt-14 mb-8;
+}
+
+h3 {
+  @apply text-xs font-normal uppercase font-mono;
+}
+
+p {
+  @apply text-base text-muted font-normal mb-2;
+}
+
+.nav-text {
+  @apply text-base font-medium uppercase;
+}
+
+table {
+  @apply w-full border-collapse mb-6;
+}
+
+th {
+  @apply border-b-0.2 border-mutedBackground py-2 text-left font-semibold text-foreground text-base;
+}
+
+td {
+  @apply border-b-0.2 border-mutedBackground py-2 text-muted text-base;
+}
+
+.button-sm {
+  @apply relative inline-grid size-7 place-items-center rounded-md hover:bg-mutedBackground -ml-1.5 text-foreground;
+}
+
+.nav-button {
+  @apply bg-foreground text-background w-6 h-6 flex justify-center items-center;
+}
